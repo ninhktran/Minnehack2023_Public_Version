@@ -1,0 +1,33 @@
+<h2 class="mx-5 my-3">Events</h2>
+<div class="row row-cols-1">
+  <div
+    class="col-3 px-1 bg-secondary position-fixed bottom-50 end-0 mb-5 me-4 rounded"
+    id="sticky-sidebar"
+    style="width: 12rem; height: 16rem"
+  >
+    <h4 class="text-white">Sort By:</h4>
+    <div class="my-2 border rounded" *ngFor="let item of eventTypeArray">
+      <input
+        type="checkbox"
+        class="form-check-input my-2 mx-2"
+        id="exampleCheck1"
+      />
+      <label class="form-check-label text-white" for="exampleCheck1">{{
+        item
+      }}</label>
+    </div>
+  </div>
+  <div *ngFor="let event of events">
+    <div class="card mb-3 ms-5 mx-left" style="width: 66rem">
+      <div class="card-header">
+        <h5 class="card-title">{{ event.Name }}</h5>
+      </div>
+      <div class="card-body">
+        <p class="card-text">Event type: {{ event.EventType }}</p>
+        <p class="card-text">Description: {{ event.Description }}</p>
+        <p class="card-text">Location: {{ event.Location }}</p>
+        <a href="#" class="btn btn-primary">Interested</a>
+      </div>
+    </div>
+  </div>
+</div>

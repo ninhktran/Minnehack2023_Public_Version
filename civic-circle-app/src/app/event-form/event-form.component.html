@@ -1,0 +1,60 @@
+<!-- <div *ngFor="let type of eventTypeArray">{{type}}</div> -->
+
+
+
+
+<form class="fill-out-form bg-grey position-absolute top-50 start-50 translate-middle" #myForm="ngForm"
+  (ngSubmit)="onSubmit(myForm)">
+  <div class="mb-2 form-input">
+    <label for="Event Name">Event Name</label>
+    <input name="name" class="form-control form-input" placeholder="event name" ngModel required #name="ngModel">
+  </div>
+
+  <div class="mb-2 form-input">
+    <label for="Event location">Event Location</label>
+    <input name="location" class="form-control" placeholder="event location" ngModel required #name="ngModel">
+  </div>
+
+  <div class="mb-2 form-input">
+    <label for="Event Description">Event Description</label>
+    <div><textarea rows="5" cols="35" placeholder="Description" name="text" ngModel required #name="ngModel"></textarea>
+    </div>
+  </div>
+  <div class="mb-2">
+    <select style="width: 20rem; height: 2rem;" [(ngModel)]="type" id="type" name="category">
+      <option value="" disabled selected>select an event type</option>
+      <option *ngFor="let type of eventTypeArray" [value]="type">{{type}}</option>
+    </select>
+  </div>
+
+  <div class="mt-2">
+    <input style="width: 13.75rem;" name="date" type="text" ngModel required #name="ngModel" ngbDatepicker
+      #d="ngbDatepicker" />
+    <button type='button' (click)="d.toggle()">Select Date</button>
+  </div>
+
+  <div class="mt-4">
+    <button type="submit" class="btn mx-5 px-4" style="background-color: #FCE491;">Submit</button>
+    <button type="clear" class="btn btn-secondary mx-5 px-4" (click)="resetFormValue(myForm)">Clear</button>
+  </div>
+</form>
+
+<div class="col-3 px-1 bg-secondary position-absolute end-0 rounded bg-grey m-5" id="sticky-sidebar"
+  style="width: 22rem; height: 20rem;">
+  <h5 class="text-white m-3">Posting to Civic Circle</h5>
+  <div class="card-header text-white border-top border-bottom mx-2 ">
+    <h6 class="card-title m-3">1. Be civil</h6>
+  </div>
+  <div class="card-header text-white border-top border-bottom mx-2 ">
+    <h6 class="card-title m-3">2. Search for duplicates before posting</h6>
+  </div>
+  <div class="card-header text-white border-top border-bottom mx-2 ">
+    <h6 class="card-title m-3">3. Fill in appropriate information</h6>
+  </div>
+  <div class="card-header text-white border-top border-bottom mx-2 ">
+    <h6 class="card-title m-3">4. Provide clear, enticing descriptions</h6>
+  </div>
+  <div class="card-header text-white border-top mx-2 ">
+    <h6 class="card-title m-3">5. Post subject to moderator review.</h6>
+  </div>
+</div>

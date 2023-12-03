@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-purple">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <h1 class="text-light me-4">Civic Circle</h1>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#" routerLink="/events" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" routerLink="/event-form" routerLinkActive="active" ariaCurrentWhenActive="page">New Event</a>
+                </li>
+                <li class="nav-item me-4">
+                    <a class="nav-link" href="#" routerLink="/interested-events" routerLinkActive="active" ariaCurrentWhenActive="page">Interested Events</a>
+                </li>
+                <form class="d-flex">
+                    <input class="form-control col col-lg-2 me-2" style="width: 40rem;" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+                <!-- <li class="nav-item">
+                    <a class="position-absolute end-0 btn btn-primary me-5"routerLink="/first-component" routerLinkActive="active" ariaCurrentWhenActive="page">Sign In</a>
+                </li> -->
+                <li class="position-absolute end-0 nav-item d-flex flex-row-reverse">
+                    <a class="nav-link mx-2" style="color: #FCE491" href="#" routerLink="/second-component" ariaCurrentWhenActive="page">Register</a>
+                    <a class="nav-link" style="color: #FCE491" href="#" routerLink="/first-component" ariaCurrentWhenActive="page">Sign in</a>
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+</nav>

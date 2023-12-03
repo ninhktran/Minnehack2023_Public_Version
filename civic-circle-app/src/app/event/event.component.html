@@ -1,0 +1,62 @@
+<h2 class="mx-5 my-3">Events</h2>
+<!-- <ng-template #content let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+	</div>
+</ng-template> -->
+
+
+<hr />
+
+<div class="row row-cols-1">
+    <div class="col-3 px-1 bg-secondary position-fixed bottom-50 end-0 mb-5 me-5 rounded bg-grey" id="sticky-sidebar"
+        style="width: 14rem; height: 16.5rem;">
+        <h4 class="text-white m-2">Sort By:</h4>
+        <div class="my-2 border rounded" *ngFor="let item of items">
+            <input type="checkbox" class="form-check-input m-2" [(ngModel)]="item.checked" (change)="updateSelected(item)">
+            <label class="form-check-label text-white" for="exampleCheck">{{item.name}}</label>
+        </div>
+    </div>
+    <div class="col-3 px-1 bg-secondary position-fixed bottom-0 end-0 mb-4 me-5 rounded bg-grey" id="sticky-sidebar"
+        style="width: 14rem; height: 25rem;">
+        <h5 class="text-white m-2">Current Local Events:</h5>
+        <div *ngFor="let event of currentEvents">
+            <div class="card-header text-white border-top border-bottom mx-2 ">
+                <h6 class="card-title mt-3">{{event.Name}}</h6>
+                <h6 class="card-title mb-3">Type: {{event.EventType}}</h6>
+            </div>
+        </div>
+    </div>
+    <div *ngFor="let event of events; let i = index">
+        <div *ngIf="selectedItems.includes(event.EventType)" class="card mb-3 ms-5 mx-left" style="width: 66rem;">
+            <div class="card-header" role="button">
+                <!-- Modal here! -->
+                <!-- <a class="nav-link" href="#" routerLink="/event-form" routerLinkActive="active" ariaCurrentWhenActive="page">New Event</a> -->
+
+                <h5 class="card-title"(click)="open(content)">{{event.Name}}</h5>
+                <ng-template #content let-modal>	
+                    <h4 class="modal-header">{{event.Name}}</h4>
+                    <div class="modal-body">
+                        <app-event-modal [ID] = event.ID [description]=event.Description [location]=event.Location></app-event-modal>
+                    </div>
+                </ng-template>
+
+
+            </div>
+            <div class="card-body">
+                <p class="card-text">Event type: {{event.EventType}}</p>
+                <p class="card-text">Description: {{event.Description}}</p>
+                <p class="card-text">Location: {{event.Location}}</p>
+                <p class="card-text">Date: {{date_str[i]}}</p>
+                <a href="#" class="btn" style="background-color: #FCE491;">Interested</a>
+            </div>
+        </div>
+    </div>
+</div>

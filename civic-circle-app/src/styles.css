@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+.bg-purple {
+    background-color: #524078;
+}
+
+.bg-grey {
+    background-color: #F7F7F9;
+}
+
+.hl-text {
+    color: #FCE491;
+}
+
+.fill-out-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 34rem;
+    width: 25rem;
+}
+
+.form-input {
+    width: 20rem;
+}
+
+.sign-in-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 32rem;
+    width: 25rem;
+}
+
+.sign-up-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 32rem;
+    width: 25rem;
+}

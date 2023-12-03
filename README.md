@@ -1,1 +1,1 @@
-# Minnehack2023_Public_Version
+# Minnehack2023
